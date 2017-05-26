@@ -1,0 +1,25 @@
+.AppBar {
+    width: 100%;
+    height: 64px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.AppBar__button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+.AppBar__icon {
+    margin: 9px;
+}
+
+.AppBar__title {
+    float: left;
+    line-height: 64px;
+    vertical-align: middle;
+    font-size: 1.4em;
+    padding-left: 1em;
+}

@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import LoginForm from './components/LoginForm';
+import { Provider } from 'react-redux';
+import Root from './Root';
+import createStore from './redux/createStore';
+
+const store = createStore();
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <LoginForm onFbResponse={(r) => console.log(r)} />
-            </div>
+            <Provider store={store}>
+                <Root />
+            </Provider>
         );
     }
 }
