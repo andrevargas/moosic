@@ -28,11 +28,19 @@ class Root extends Component {
     }
 
     render() {
-        if (this.props.isLoggedIn) {
+        const { user } = this.props;
+        if (user.isLoggedIn) {
             return (
                 <div>
-                    <Drawer open={this.state.drawerOpen} onChange={this.toggleDrawer} />
-                    <AppBar title="Teste" onMenuPress={() => this.toggleDrawer(true)} />
+                    <Drawer
+                        open={this.state.drawerOpen}
+                        onChange={this.toggleDrawer}
+                        user={user}
+                    />
+                    <AppBar
+                        title="Teste"
+                        onMenuPress={() => this.toggleDrawer(true)}
+                    />
                     {this.renderScene()}
                 </div>
             );
@@ -44,7 +52,7 @@ class Root extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    isLoggedIn: state.user.isLoggedIn,
+    user: state.user,
     currentScene: state.scenes.currentScene
 });
 

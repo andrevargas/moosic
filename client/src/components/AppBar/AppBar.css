@@ -10,6 +10,11 @@
     padding: 0;
     margin: 0;
     float: left;
+    transition: opacity ease .2s;
+}
+
+.AppBar__button:active {
+    opacity: 0.2;
 }
 
 .AppBar__icon {

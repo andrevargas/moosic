@@ -1,9 +1,14 @@
-import { createAction, handleActions } from 'redux-actions';
+export const NAVIGATE = 'moosic/scenes/NAVIGATE';
 
-export const navigate = createAction('moosic/scenes/NAVIGATE');
+export const navigate = payload => ({ type: NAVIGATE, payload });
 
 const initialState = { currentScene: 'main' };
 
-export default handleActions({
-    [navigate]: (state, { payload }) => ({ ...state, currentScene: payload })
-}, initialState);
+export default function reducer(state = initialState, action) {
+    switch (action.type) {
+        case NAVIGATE:
+            return { ...state, currentScene: action.payload };
+        default:
+            return state;
+    }
+};
