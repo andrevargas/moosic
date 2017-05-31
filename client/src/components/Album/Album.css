@@ -1,0 +1,28 @@
+.Album {
+    width: 170px;
+    background-color: #555555;
+}
+
+.Album__image {
+    width: 170px;
+    height: 170px;
+    background-size: 100%;
+}
+
+.Album__info {
+    width: auto;
+    height: auto;
+    padding: 10px;
+}
+
+.Album__title {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.Album__subtitle {
+    font-size: .9em;
+    opacity: .8;
+}

@@ -1,15 +1,13 @@
 import React from 'react';
-import menuIcon from '../../images/ic_menu_white_48px.svg';
 import './AppBar.css';
 
 const AppBar = ({ title, onMenuPress }) => (
     <div className="AppBar">
-        <button className="AppBar__button" onClick={onMenuPress}>
-            <img src={menuIcon} className="AppBar__icon" alt="Menu" />
-        </button>
+        <button className="AppBar__button" onClick={onMenuPress} />
         <span className="AppBar__title">
             {title}
         </span>
+        <div className="clearfix" />
     </div>
 );
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Login from './scenes/Login';
 import Main from './scenes/Main';
+import Content from './components/Content';
 import AppBar from './components/AppBar';
 import Drawer from './components/Drawer';
 import { navigate } from './redux/ducks/scenes';
@@ -38,10 +39,12 @@ class Root extends Component {
                         user={user}
                     />
                     <AppBar
-                        title="Teste"
+                        title="Moosic"
                         onMenuPress={() => this.toggleDrawer(true)}
                     />
-                    {this.renderScene()}
+                    <Content>
+                        {this.renderScene()}
+                    </Content>
                 </div>
             );
         } else {
