@@ -10,13 +10,17 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <AlbumList albums={this.props.albums} />
+                <AlbumList
+                    albums={this.props.albums}
+                    isFetching={this.props.isFetching}
+                />
             </div>
         );
     }
 }
 
 const mapStateToProps = state => ({
+    isFetching: state.albums.isFetching,
     albums: state.albums.items
 });
 

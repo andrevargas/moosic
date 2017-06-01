@@ -3,7 +3,7 @@ export const LOGIN_SUCCESS = 'moosic/user/LOGIN_SUCCESS';
 export const loginSuccess = payload => ({ type: LOGIN_SUCCESS, payload });
 
 const initialState = {
-    isLoggedIn: true
+    isLoggedIn: false
 };
 
 export default function reducer(state = initialState, action) {
