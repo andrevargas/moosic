@@ -13,7 +13,7 @@ class Login extends Component {
         window.FB.login(response => {
             this.props.login(response);
             saveAccessToken(response.authResponse.accessToken);
-        });
+        }, { scope: 'public_profile,email' });
     }
     render() {
         return <LoginForm onSubmit={this.onSubmit} />
