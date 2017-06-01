@@ -27,11 +27,11 @@ export default class LastFMApi {
             limit: 1
         };
 
-        const albumUrl = `${LASTFM_REQUEST_URL}&${
+        const albumsUrl = `${LASTFM_REQUEST_URL}&${
             querystring.stringify(options)
         }`;
 
-        return fetch(albumUrl)
+        return fetch(albumsUrl)
             .then(response => response.json());
 
     }

@@ -2,11 +2,11 @@ import React from 'react';
 import FacebookButton from '../FacebookButton';
 import './LoginForm.css';
 
-const LoginForm = ({ onLogin }) => (
+const LoginForm = ({ onSubmit }) => (
     <div className="LoginForm">
         <div className="LoginForm__logo" />
         <h1 className="LoginForm__title">Moosic</h1>
-        <FacebookButton onFbResponse={onLogin} />
+        <FacebookButton onSubmit={onSubmit} label="Entrar com Facebook" />
     </div>
 );
 

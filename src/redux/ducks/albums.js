@@ -30,7 +30,7 @@ export default function reducer(state = initialState, action) {
     }
 };
 
-export const fetchAlbums = () => (dispatch, getState) => {
+export const fetchAlbums = () => dispatch => {
     
     dispatch(fetchTopAlbums());
 

@@ -5,7 +5,7 @@ import Main from './scenes/Main';
 import Content from './components/Content';
 import AppBar from './components/AppBar';
 import Drawer from './components/Drawer';
-import { navigate } from './redux/ducks/scenes';
+import { updateUserInfo } from './redux/ducks/user';
 
 class Root extends Component {
 
@@ -13,6 +13,20 @@ class Root extends Component {
         super();
         this.state = { drawerOpen: false };
         this.toggleDrawer = this.toggleDrawer.bind(this);
+    }
+
+    componentDidUpdate() {
+        this.getUserInfo();
+    }
+    
+    getUserInfo() {
+        const { user, updateUserInfo } = this.props;
+        if (user.isLoggedIn && !user.isUpToDate) {
+            window.FB.api('/me', {
+                fields: 'name,email',
+                access_token: user.accessToken
+            }, updateUserInfo);
+        }
     }
 
     toggleDrawer(open) {
@@ -48,7 +62,7 @@ class Root extends Component {
                 </div>
             );
         } else {
-            return <Login />
+            return <Login />;
         }
     }
 
@@ -60,7 +74,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    navigate: scene => dispatch(navigate(scene))
+    updateUserInfo: (payload) => dispatch(updateUserInfo(payload))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Root);

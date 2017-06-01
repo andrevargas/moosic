@@ -20,3 +20,25 @@
     margin: 10px 0 0 0;
     padding: 0;
 }
+
+.Drawer__footer {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+}
+
+.Drawer__logo {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    left: 5px;
+}
+
+.Drawer__copyright {
+    color: #333333;
+}
+
+.Drawer__author {
+    color: #333333;
+}
