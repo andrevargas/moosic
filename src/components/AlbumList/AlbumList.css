@@ -1,0 +1,9 @@
+.AlbumList {
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    padding-bottom: 0;
+}
