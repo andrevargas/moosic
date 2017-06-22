@@ -17,7 +17,8 @@ const AlbumSchema = {
         name: 'string',
         artist: 'string',
         url: 'string',
-        playCount: 'int'
+        playCount: 'int',
+        imageUrl: 'string'
     }
 };
 

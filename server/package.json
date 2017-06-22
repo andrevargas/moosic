@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "node-fetch": "^1.7.1",
     "realm": "^1.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
