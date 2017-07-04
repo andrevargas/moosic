@@ -1,0 +1,30 @@
+version: '2'
+services:
+    moosic_api:
+        build:
+            context: ./server
+            args:
+                NODE_PORT: 3000
+        environment:
+            NODE_PORT: 3000
+        image: moosic_api:dev
+        container_name: moosic_api
+        ports:
+            - 3000:3000
+        depends_on:
+            - moosic_db_neo4j
+        links:
+            - moosic_db_neo4j
+        volumes:
+            - ./server:/moosic/api
+    moosic_db_neo4j:
+        image: neo4j:3.2
+        container_name: moosic_db_neo4j
+        volumes:
+            - data:/data
+        ports:
+            - 7474:7474
+            - 7687:7687
+volumes:
+    data:
+        external: false
